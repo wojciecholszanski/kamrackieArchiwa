@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="left">
+        <div>
+            <select id="video-select"></select>
+            <button onclick="videoChoice()">Pokaz film</button>
+        </div>
+        <div>
+            <select id="search-select">
+                <option value="0">W tytule</option>
+                <option value="2">W transkrypcji</option>
+            </select>
+            <input type="text" id="search-input">
+            <button onclick="searchText()">Szukaj w filmach</button>
+        </div>
+        <div>
+            <select id="cat-select">
+                <option value="happy">Szczęśliwy</option>
+                <option value="angry">Zły</option>
+                <option value="offend">Obrażanie innych</option>
+                <option value="sad">Smutny</option>
+            </select>
+            <button onclick="searchCat()">Szukaj po kategorii</button>
+        </div>
+    </div>
+    <div id="main">
+        <p id="p1"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

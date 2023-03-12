@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+*:focus {
+    outline: none;
+}
+*{
+    font-family: 'Unbounded', cursive;
+}
+body{
+    margin: 0;
+    background: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+#left{
+    width: 30%;
+    height: 100%;
+    background: #444444;
+    display: flex;
+    flex-direction: column;
+}
+#left > div{
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-top: #F46036 2px dashed;
+}
+#left div:first-child{
+    border-top: none;
+}
+select,input{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+button{
+    width: 60%;
+    height: 40px;
+    font-size: 20px;
+    background: #F46036;
+    box-shadow: 0 5px 0 #F4562A;
+    border-radius: 5px;
+    border: none;
+}
+button:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+#main{
+    width: 70%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+p{
+    color: white;
+}
+.movie-desc p{
+    color: black;
+}
+a{
+    font-size: 20px;
+    text-decoration: underline;
+}
+a:hover{
+    cursor: pointer;
+}
+.movie-desc{
+    list-style: none;
+    width: 80%;
+    margin: auto;
+    padding: 0;
+    margin-bottom: 20px;
+}
+.movie-desc li{
+    background: #444444;
+    padding: 10px 0;
+}
+.movie-desc li:nth-child(2n){
+    background: #333333;
+
+}
+.movie-desc li:first-child{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.movie-desc li:last-child{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+@media(max-width:1050px){
+    body{
+        flex-direction: column;
+        justify-content: none;
+        align-items: none;
+        height: auto;
+        min-height: 100vh;
+    }
+    #left{
+        width: 100%;
+        height: auto;
+    }
+    #left div{
+        min-height: 300px;
+    }
+    #main{
+        width: 100%;
+        height: auto;
+    }
+    .video-player{
+        width:100%;
+    }
+}
