@@ -1,5 +1,5 @@
 const tab=[
-    // name => category, subtitles
+    // name, category, subtitles
     ['Czyste szczęście','happy','łaaaaaaaaa'],
     ['Ty stara pizdo','angry','Ty stara pizdo. Ja pierdole, kurwa. Ile jeszcze? Ile jeszcze tego gnoju trzeba przepychać? Hydraulika! Hydraulika... ze spręzyną zeby w to gówno wbił i kurwa kręcił! Wy kurwy inteligenckie! Kurwa, zginiemy przez was i marna to dla mnie pociecha ze was tez szlag trafi. Mnie moze szlag trafić, ja juz kurwa nie zyje. Ja zyje w suplemencie, ale przed wami jebane całe wasze zycie ma być. Macie się kurwa cieszyć, macie na Malediwy jechać, do Melazji się pierdolić, po Ibizach srać, elektryki se macie kupować, macie życ'],
     ['A to żydzisko jest','offend','A to żydzisko jest. O żesz kurwa mać, nigdy nie widziałem jak on wygląda'],
@@ -21,46 +21,66 @@ const tab=[
     ['Ty pierdolony tchórzu','offend','Ty pierdolony tchórzu maczany w sraczce'],
     ['Śmiech przez łzy','happy sad',''],
     ['Nie masz prawa mówić do mnie Kamracie','angry offend','Nie masz prawa mówić do mnie Kamracie ty kurwski pomiocie'],
+    ['Bagnet francuski','angry','To cię kurwa znajdę i ci łeb odpierdolę bagnetem moim francuskim ty skurwielu ty. Bydlak'],
+    ['Co chcesz osiągnąć','offend','Co chcesz kurwa osiągnąć, siedzisz kurwa w Anglii, grzejesz chuja w kiblu, gównem jesteś kurwa'],
+    ['Czy pan ochujał','offend','Czy pan ochujał? Myślnik, konstytucja, wykrzyknik'],
+    ['Ty kurwo na przyzbie siedząca','offend','Ty kurwo na przyzbie siedząca'],
+    ['Żydowski zad','offend','A to, to jest żydowski zad. To takie coś. Przpraszam, ale starałem się'],
+    ['Papież','offend','Jak papież, jak ta kurwa w białej kietce, ta szmata pierdolona w Watykanie, ten skurwysyn, ten diabeł pierdolony, kurwa niszczy nasz fundament naszej cywilizacji'],
 ]
 
-const video_select=document.getElementById("video-select")
+const videoSelect=document.getElementsByClassName("nav__wrapper-select")[0]
 for(let i=0;i<tab.length;i++){
-    video_select.innerHTML += "<option value='" + i + "'>" + tab[i][0] + "</option>"
+    videoSelect.innerHTML += "<option value='" + i + "'>" + tab[i][0] + "</option>"
 }
 
-const p1=document.getElementById("p1")
+const main = document.getElementsByClassName("main")[0]
 function videoChoice(){
-    const choice=document.getElementById("video-select").value
-    p1.innerHTML = ""
-    p1.innerHTML += "<ul class='movie-desc'>" + "<li>" + '"' + tab[choice][0] + '"' + "</li>" + "<li>" + tab[choice][1] + "</li>" + "<li>" + tab[choice][2] + "</li>" + "</ul>"
-    p1.innerHTML += "<video class='video-player' height='400px' controls><source src='video/" + String(choice) + ".mp4'></video>"
+    const choice=document.getElementsByClassName("nav__wrapper-select")[0].value
+    main.innerHTML = ""
+    var content = ""
+    content += "<div class='main__video-wrapper'>"
+    content += "<h3 class='main__video-title'>" + tab[choice][0] + "</h3>"
+    content += "<h4 class='main__video-categories'>" + tab[choice][1] + "</h4>"
+    content += "<h5 class='main__video-text'>" + tab[choice][2] + "</h5>"
+    content += "<video class='main__video-player' controls><source src='video/" + String(choice) + ".mp4'></video>"
+    content += "</div>"
+    main.innerHTML = content
 }
 
-function videoDisplay(number){
-    p1.innerHTML = ""
-    p1.innerHTML += "<ul class='movie-desc'>" + "<li>" + '"' + tab[number][0] + '"' + "</li>" + "<li>" + tab[number][1] + "</li>" + "<li>" + tab[number][2] + "</li>" + "</ul>"
-    p1.innerHTML += "<video class='video-player' height='400px' controls><source src='video/" + String(number) + ".mp4'></video>"
+function videoDisplay(videoId){
+    var content = ""
+    content += "<div class='main__video-wrapper'>"
+    content += "<h3 class='main__video-title'>" + tab[videoId][0] + "</h3>"
+    content += "<h4 class='main__video-categories'>" + tab[videoId][1] + "</h4>"
+    content += "<h5 class='main__video-text'>" + tab[videoId][2] + "</h5>"
+    content += "<video class='main__video-player' controls><source src='video/" + String(videoId) + ".mp4'></video>"
+    content += "</div>"
+    main.innerHTML += content
 }
 
 function searchText(){
-    const search=document.getElementById("search-input").value.toLowerCase()
-    const option=document.getElementById("search-select").value
-    p1.innerHTML = "<h2>Wyniki wyszukiwania:</h2>"
+    const search=document.getElementsByClassName("nav__wrapper-input")[0].value.toLowerCase()
+    const option=document.getElementsByClassName("nav__wrapper-select")[1].value
+    main.innerHTML = ""
+    var counter = 0
     for(let i=0;i<tab.length;i++){
         if(tab[i][option].toLowerCase().includes(search)){
-            p1.innerHTML += "<a onclick='videoDisplay(" + i + ")'>" + tab[i][0] + "</a><br>"
-            p1.innerHTML += "<video class='video-player' height='300px' controls><source src='video/" + i + ".mp4'></video><br>"
+            videoDisplay(i)
+            counter++
         }
+    }
+    if(counter==0){
+        main.innerHTML = "<h2 class='main__title'>Nie znaleziono żadnych wyników</h2>"
     }
 }
 
 function searchCat(){
-    const option=String(document.getElementById("cat-select").value)
-    p1.innerHTML = ""
+    const option=String(document.getElementsByClassName("nav__wrapper-select")[2].value)
+    main.innerHTML = ""
     for(i=0;i<tab.length;i++){
         if(tab[i][1].includes(option)){
-            p1.innerHTML += "<a onclick='videoDisplay(" + i + ")'>" + tab[i][0] + "</a><br>"
-            p1.innerHTML += "<video class='video-player' height='300px' controls><source src='video/" + i + ".mp4'></video><br>"
+            videoDisplay(i)
         }
     }
 }  
