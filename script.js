@@ -27,7 +27,12 @@ const tab=[
     ['Ty kurwo na przyzbie siedząca','offend','Ty kurwo na przyzbie siedząca'],
     ['Żydowski zad','offend','A to, to jest żydowski zad. To takie coś. Przpraszam, ale starałem się'],
     ['Papież','offend','Jak papież, jak ta kurwa w białej kietce, ta szmata pierdolona w Watykanie, ten skurwysyn, ten diabeł pierdolony, kurwa niszczy nasz fundament naszej cywilizacji'],
+    ['Może byś się chuju przedstawił','offend angry','No kurwa, może byś się chuju ptzedstawił w dupę jebany co? A nie kurwa masz pytanie. A chuj mnie obchodzi twoje pytanie. Powiedz że się nazywasz Zosia, dzwonisz z Pacanowa i wystawiłaś się do ukłucia kurwa. Przynajmniej jakaś jasność była. Ja pierdole, kurwa, mają pretensje skuwysyny, że są eleganccy, a my jesteśmy szczury. Kurwa nawet nie powie, wymyśl se chuju jakieś imię że się nazywasz na przykład stęchlizna, odbytnik bulgaris. "A ja mam pytanie", kurwa wypierdalaj'],
+    ['Musisz być precyzyjny','offend angry','Musisz być precyzyjny, skurwysynu'],
+    ['Ojca kurwe masz','offend angry','Matkę kurwę masz, ojca kurwę masz, babkę kurwę masz, dziadka kurwę masz, prababkę kurwę masz, pradziadka kurwę masz, praprababkę kurwę masz, jesteś skurwysynem dyplomowanym'],
+    ['To ja czekam aż mnie opierdolisz','offend angry','Skurwysynu ty, ty do mnie dzwonisz, chesz mnie sposponować, obrazić i cię na to nie stać kurwo? Ty marnujesz mój czas. To ja czekam kurwa że zadzwonisz, że mnie opierdolisz, że mnie zjedziesz, że obrazisz wszystko co dla mnie święte a ty kurwa nawet tego nie potrafisz? Ty kurwa klocku gówniany wypolerowany kurwa ty. Ty z dupy psiej wypadnięty. Ty skurwysynu suki zawszonej ty, kurwa, matka cię z lisem zrobiła kurwa na stercie gówna. Ty do mnie dzwonisz to się kurwa przygotuj, napisz sobie kurwa tekst wcześniej, naucz się go kurwa na pamięć, zadzwoń kurwa, obraź. A ty mnie wkurwiłeś tym, że mnie nie wkurwiłeś kurwo, nie wkurwiłeś mnie. Tego ci kurwa nigdy nie wybacze. Wpierdolę ci rozrzażony pręt nierozrzażonym końcem w dupę żeby ci nikt nie mógł wyciągnąć'],
 ]
+
 
 const videoSelect=document.getElementsByClassName("nav__wrapper-select")[0]
 for(let i=0;i<tab.length;i++){
@@ -36,6 +41,7 @@ for(let i=0;i<tab.length;i++){
 
 const main = document.getElementsByClassName("main")[0]
 function videoChoice(){
+    main.style.display = 'flex'
     const choice=document.getElementsByClassName("nav__wrapper-select")[0].value
     main.innerHTML = ""
     var content = ""
@@ -60,6 +66,7 @@ function videoDisplay(videoId){
 }
 
 function searchText(){
+    main.style.display = 'grid'
     const search=document.getElementsByClassName("nav__wrapper-input")[0].value.toLowerCase()
     const option=document.getElementsByClassName("nav__wrapper-select")[1].value
     main.innerHTML = ""
@@ -76,6 +83,7 @@ function searchText(){
 }
 
 function searchCat(){
+    main.style.display = 'grid'
     const option=String(document.getElementsByClassName("nav__wrapper-select")[2].value)
     main.innerHTML = ""
     for(i=0;i<tab.length;i++){
