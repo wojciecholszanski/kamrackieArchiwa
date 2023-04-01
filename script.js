@@ -31,6 +31,11 @@ const tab=[
     ['Musisz być precyzyjny','offend angry','Musisz być precyzyjny, skurwysynu'],
     ['Ojca kurwe masz','offend angry','Matkę kurwę masz, ojca kurwę masz, babkę kurwę masz, dziadka kurwę masz, prababkę kurwę masz, pradziadka kurwę masz, praprababkę kurwę masz, jesteś skurwysynem dyplomowanym'],
     ['To ja czekam aż mnie opierdolisz','offend angry','Skurwysynu ty, ty do mnie dzwonisz, chesz mnie sposponować, obrazić i cię na to nie stać kurwo? Ty marnujesz mój czas. To ja czekam kurwa że zadzwonisz, że mnie opierdolisz, że mnie zjedziesz, że obrazisz wszystko co dla mnie święte a ty kurwa nawet tego nie potrafisz? Ty kurwa klocku gówniany wypolerowany kurwa ty. Ty z dupy psiej wypadnięty. Ty skurwysynu suki zawszonej ty, kurwa, matka cię z lisem zrobiła kurwa na stercie gówna. Ty do mnie dzwonisz to się kurwa przygotuj, napisz sobie kurwa tekst wcześniej, naucz się go kurwa na pamięć, zadzwoń kurwa, obraź. A ty mnie wkurwiłeś tym, że mnie nie wkurwiłeś kurwo, nie wkurwiłeś mnie. Tego ci kurwa nigdy nie wybacze. Wpierdolę ci rozrzażony pręt nierozrzażonym końcem w dupę żeby ci nikt nie mógł wyciągnąć'],
+    ['Podusmowanie roku','happy','Piłem, pierdoliłem i jeździłem konno'],
+    ['Kurwa, zobacz jak to idzie','angry offend','Kurwa, zobacz jak to idzie, jebany cieć w dupę pierdolony. Rusz dupę kurwa! Rusz kurwa dupę pedale kurwo jebana! Przeklinałem? Nie. To dobrze. Idzie kurwa i to nie wiadomo czy to facet czy to baba. Ale jeszcze zwolnił bo to było widać. Zwolnił wiesz dlaczego? Bo zobaczył dwóch facetów i chciał pokazać jaką ma piękną dupę. Zaczął nią kurwa kręcić jak to pederasta'],
+    ['Ruszcie swoje tłuste dupska','angry offend','Ruszcie swoje tłuste dupska i łyse pały i maszerować, maszerować, maszerować, aż się rozwali ten układ na strzępy, na kawałki, maszerować!'],
+    ['Biurokracja','angry','W pierdolonym dokumencie z pierdolonym nagłówkiem z pierdoloną kursywą z pierdoloną pieczątką z pierodlonym podpisem'],
+    ['Dlaczego ty na mnie mówisz że jestem żydem','sad',''],
 ]
 
 
