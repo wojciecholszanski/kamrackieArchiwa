@@ -44,30 +44,28 @@ for(let i=0;i<tab.length;i++){
     videoSelect.innerHTML += "<option value='" + i + "'>" + tab[i][0] + "</option>"
 }
 
-const main = document.getElementsByClassName("main")[0]
-function videoChoice(){
-    main.style.display = 'flex'
-    const choice=document.getElementsByClassName("nav__wrapper-select")[0].value
-    main.innerHTML = ""
-    var content = ""
-    content += "<div class='main__video-wrapper'>"
-    content += "<h3 class='main__video-title'>" + tab[choice][0] + "</h3>"
-    content += "<h4 class='main__video-categories'>" + tab[choice][1] + "</h4>"
-    content += "<h5 class='main__video-text'>" + tab[choice][2] + "</h5>"
-    content += "<video class='main__video-player' controls><source src='video/" + String(choice) + ".mp4'></video>"
-    content += "</div>"
-    main.innerHTML = content
-}
-
-function videoDisplay(videoId){
+function videoWrapper(videoId){
     var content = ""
     content += "<div class='main__video-wrapper'>"
     content += "<h3 class='main__video-title'>" + tab[videoId][0] + "</h3>"
     content += "<h4 class='main__video-categories'>" + tab[videoId][1] + "</h4>"
     content += "<h5 class='main__video-text'>" + tab[videoId][2] + "</h5>"
     content += "<video class='main__video-player' controls><source src='video/" + String(videoId) + ".mp4'></video>"
+    content += "<div class='main__video-download-wrapper'><a class='main__video-download' href='video/" + String(videoId) + ".mp4' download><ion-icon name='arrow-down-outline'></ion-icon>Download</a></div>"
     content += "</div>"
-    main.innerHTML += content
+    return content
+}
+
+const main = document.getElementsByClassName("main")[0]
+function videoChoice(){
+    main.style.display = 'flex'
+    const choice=document.getElementsByClassName("nav__wrapper-select")[0].value
+    main.innerHTML = videoWrapper(choice)
+}
+
+function videoDisplay(videoId){
+    videoWrapper(videoId)
+    main.innerHTML += videoWrapper(videoId)
 }
 
 function searchText(){
