@@ -5,36 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamrackie Archiwa</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="videoPlayer.css">
 </head>
-<body>
+<body onload="mainPage()">
     <nav class="nav">
-        <div class="nav__wrapper">
-            <select class="nav__wrapper-select"></select>
-            <button class="nav__wrapper-button" onclick="videoChoice()">Pokaż film</button>
+        <div class="nav__logo" onclick="mainPage()">
+            <img src="logo.png" class="nav__logo-img" alt="Logo Rodacy Kamraci">
+            <p class="nav__logo-title">Kamrackie Archiwa</p>
         </div>
-        <div class="nav__wrapper">
-            <select class="nav__wrapper-select">
-                <option value="0">W tytule</option>
-                <option value="2">W nagraniu</option>
-            </select>
-            <input class="nav__wrapper-input" type="text" id="search-input">
-            <button class="nav__wrapper-button" onclick="searchText()">Szukaj w filmach</button>
-        </div>
-        <div class="nav__wrapper">
-            <select class="nav__wrapper-select">
-                <option value="happy">Szczęśliwy</option>
-                <option value="angry">Zły</option>
-                <option value="offend">Obrażanie innych</option>
-                <option value="sad">Smutny</option>
-            </select>
-            <button class="nav__wrapper-button" onclick="searchCat()">Szukaj po kategorii</button>
-        </div>
+        <!-- <div class="nav__search-bar-wrapper">
+            <input type="text" class="nav__search-bar" id="" placeholder="Szukaj">
+            <button class="nav__search-button"><ion-icon name="search-outline"></ion-icon></button>
+        </div> -->
     </nav>
-    <main class="main">
-        
+    <main class="main" id="main">
+
     </main>
-    <script src="script.js"></script>
+    <div class="video-player-container" id="video-player-container">
+
+    </div>
+    <img src="loading.gif" class="loading" id="loading">
+    <script src="videosTable.js"></script>
+    <script src="mainPage.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
