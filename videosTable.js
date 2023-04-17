@@ -1,4 +1,4 @@
-const tab=[
+const videosTable=[
     // name, category, subtitles
     ['Czyste szczęście','happy','łaaaaaaaaa'],
     ['Ty stara pizdo','angry','Ty stara pizdo. Ja pierdole, kurwa. Ile jeszcze? Ile jeszcze tego gnoju trzeba przepychać? Hydraulika! Hydraulika... ze spręzyną zeby w to gówno wbił i kurwa kręcił! Wy kurwy inteligenckie! Kurwa, zginiemy przez was i marna to dla mnie pociecha ze was tez szlag trafi. Mnie moze szlag trafić, ja juz kurwa nie zyje. Ja zyje w suplemencie, ale przed wami jebane całe wasze zycie ma być. Macie się kurwa cieszyć, macie na Malediwy jechać, do Melazji się pierdolić, po Ibizach srać, elektryki se macie kupować, macie życ'],
@@ -37,61 +37,3 @@ const tab=[
     ['Biurokracja','angry','W pierdolonym dokumencie z pierdolonym nagłówkiem z pierdoloną kursywą z pierdoloną pieczątką z pierodlonym podpisem'],
     ['Dlaczego ty na mnie mówisz że jestem żydem','sad',''],
 ]
-
-
-const videoSelect=document.getElementsByClassName("nav__wrapper-select")[0]
-for(let i=0;i<tab.length;i++){
-    videoSelect.innerHTML += "<option value='" + i + "'>" + tab[i][0] + "</option>"
-}
-
-function videoWrapper(videoId){
-    var content = ""
-    content += "<div class='main__video-wrapper'>"
-    content += "<h3 class='main__video-title'>" + tab[videoId][0] + "</h3>"
-    content += "<h4 class='main__video-categories'>" + tab[videoId][1] + "</h4>"
-    content += "<h5 class='main__video-text'>" + tab[videoId][2] + "</h5>"
-    content += "<video class='main__video-player' controls><source src='video/" + String(videoId) + ".mp4'></video>"
-    content += "<div class='main__video-download-wrapper'><a class='main__video-download' href='video/" + String(videoId) + ".mp4' download><ion-icon name='arrow-down-outline'></ion-icon>Download</a></div>"
-    content += "</div>"
-    return content
-}
-
-const main = document.getElementsByClassName("main")[0]
-function videoChoice(){
-    main.style.display = 'flex'
-    const choice=document.getElementsByClassName("nav__wrapper-select")[0].value
-    main.innerHTML = videoWrapper(choice)
-}
-
-function videoDisplay(videoId){
-    videoWrapper(videoId)
-    main.innerHTML += videoWrapper(videoId)
-}
-
-function searchText(){
-    main.style.display = 'grid'
-    const search=document.getElementsByClassName("nav__wrapper-input")[0].value.toLowerCase()
-    const option=document.getElementsByClassName("nav__wrapper-select")[1].value
-    main.innerHTML = ""
-    var counter = 0
-    for(let i=0;i<tab.length;i++){
-        if(tab[i][option].toLowerCase().includes(search)){
-            videoDisplay(i)
-            counter++
-        }
-    }
-    if(counter==0){
-        main.innerHTML = "<h2 class='main__title'>Nie znaleziono żadnych wyników</h2>"
-    }
-}
-
-function searchCat(){
-    main.style.display = 'grid'
-    const option=String(document.getElementsByClassName("nav__wrapper-select")[2].value)
-    main.innerHTML = ""
-    for(i=0;i<tab.length;i++){
-        if(tab[i][1].includes(option)){
-            videoDisplay(i)
-        }
-    }
-}  
