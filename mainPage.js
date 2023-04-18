@@ -1,10 +1,13 @@
 function videoThumbnail(videoId) {
-  // const main = document.getElementById('main')
   
   const wrapper = document.createElement("div")
   wrapper.classList.add("video-thumbnail-wrapper")
-  const func = "videoPage(" + videoId + ")"
-  wrapper.setAttribute("onclick", func)
+  const func1 = "videoPage(" + videoId + ")"
+  const func2 = "videoHover(" + videoId + ", 'play')"
+  const func3 = "videoHover(" + videoId + ", 'pause')"
+  wrapper.setAttribute("onclick", func1)
+  wrapper.setAttribute("onmouseover", func2)
+  wrapper.setAttribute("onmouseleave", func3)
   
   const videoWrapper = document.createElement("div")
   videoWrapper.classList.add("video-thumbnail__video-wrapper")
@@ -13,6 +16,7 @@ function videoThumbnail(videoId) {
   video.classList.add("video-thumbnail__video")
   const path = "video/" + videoId + ".mp4"
   video.setAttribute("src", path)
+  video.setAttribute("id", videoId)
   
   const shadow = document.createElement("div")
   shadow.classList.add("shadow")
@@ -36,43 +40,67 @@ function videoThumbnail(videoId) {
   return wrapper
 }
 
+function videoHover(videoId, status){
+  const video = document.getElementById(videoId)
+  if(status == 'play'){
+    video.play()
+  }
+  else{
+    video.pause()
+  }
+}
+
 videosTableLength = videosTable.length
 const main = document.getElementById('main')
-
-const loadingGif = document.getElementById('loading')
 
 function mainPage(){
 
   const videopage = document.getElementById("video-player-container")
-  videopage.remove()
+  if(videopage){
+    videopage.remove()
+  }
   
   const main = document.createElement("div")
   main.classList.add("main")
   main.setAttribute("id", "main")
 
-  const loadmore = document.createElement("p")
-  loadmore.classList.add("loadmore")
-  const titleText = document.createTextNode("Wczytaj więcej")
-  loadmore.appendChild(titleText)
-  loadmore.setAttribute("onclick", "loadMore()")
-  main.appendChild(loadmore)
-
   document.body.appendChild(main)
 
-  for(let x=videosTableLength-1;x>videosTableLength-7;x--){
+  for(let x=videosTableLength-1;x>=0;x--){
     main.appendChild(videoThumbnail(x))
   }
   vidToImg()
 }
 
-let videosAmount = 6
-function loadMore(){
-    videosAmount+=6
-    const main = document.getElementById("main")
-    for(let x=videosTableLength-videosAmount+5;x>videosTableLength-videosAmount-1;x--){
-      main.appendChild(videoThumbnail(x))
+function searchPage(){
+
+  const videopage = document.getElementById("video-player-container")
+  if(videopage){
+    videopage.remove()
+  }
+  const oldmain = document.getElementById("main")
+  if(oldmain){
+    oldmain.remove()
+  }
+
+  const main = document.createElement("div")
+  main.classList.add("main")
+  main.setAttribute("id", "main")
+
+  document.body.appendChild(main)
+
+  const value = document.getElementById("search-input").value.toLowerCase()
+  const videosArray = []
+
+  for(let x=videosTableLength-1;x>=0;x--){
+    if(videosTable[x][0].toLowerCase().includes(value) || videosTable[x][2].toLowerCase().includes(value)){
+      videosArray.push(x)
     }
-    vidToImg()
+  }
+  for(x in videosArray){
+    main.appendChild(videoThumbnail(videosArray[x]))
+  }
+  vidToImg()
 }
 
 function vidToImg(){
@@ -87,7 +115,6 @@ function vidToImg(){
         let video = document.createElement('video');
 
         video.muted = true
-        video.autoplay = true
         video.loop = true
         video.playsInline = true
 
@@ -124,10 +151,21 @@ function videoPage(videoId) {
   
   const video = document.createElement("video")
   video.classList.add("video-player__video")
-  const path = "video/" + videoId + ".mp4"
-  video.setAttribute("src", path)
   video.setAttribute("controls", true)
   video.setAttribute("playsinline", true)
+  
+  const source = document.createElement("source")
+  const path = "video/" + videoId + ".mp4"
+  source.setAttribute("src", path)
+  source.setAttribute("type", "video/mp4")
+
+  const track = document.createElement("track")
+  const trackPath = "subtitles/" + videoId + ".vtt"
+  track.setAttribute("src", trackPath)
+  track.setAttribute("default", true)
+
+  video.appendChild(source)
+  video.appendChild(track)
 
   const title = document.createElement("p")
   title.classList.add("video-player__title")
@@ -159,6 +197,12 @@ function videoPage(videoId) {
   container.appendChild(wrapper)
   container.appendChild(recommendations)
   document.body.appendChild(container)
+
+  scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  })
 
   vidToImg()
 }
