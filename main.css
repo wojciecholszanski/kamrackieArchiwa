@@ -24,7 +24,6 @@ body{
     padding-bottom: 30px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    column-gap: auto;
     position: relative;
 }
 .video-thumbnail-wrapper{

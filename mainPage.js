@@ -1,42 +1,80 @@
+function videoThumbnail(videoId) {
+  // const main = document.getElementById('main')
+  
+  const wrapper = document.createElement("div")
+  wrapper.classList.add("video-thumbnail-wrapper")
+  const func = "videoPage(" + videoId + ")"
+  wrapper.setAttribute("onclick", func)
+  
+  const videoWrapper = document.createElement("div")
+  videoWrapper.classList.add("video-thumbnail__video-wrapper")
+  
+  const video = document.createElement("img")
+  video.classList.add("video-thumbnail__video")
+  const path = "video/" + videoId + ".mp4"
+  video.setAttribute("src", path)
+  
+  const shadow = document.createElement("div")
+  shadow.classList.add("shadow")
+  
+  const title = document.createElement("p")
+  title.classList.add("video-thumbnail__title")
+  const titleText = document.createTextNode(videosTable[videoId][0])
+  title.appendChild(titleText)
+  
+  const desc = document.createElement("p")
+  desc.classList.add("video-thumbnail__desc")
+  const descText = document.createTextNode(videosTable[videoId][2])
+  desc.appendChild(descText)
+  
+  videoWrapper.appendChild(video)
+  videoWrapper.appendChild(shadow)
+  wrapper.appendChild(videoWrapper)
+  wrapper.appendChild(title)
+  wrapper.appendChild(desc)
+
+  return wrapper
+}
+
 videosTableLength = videosTable.length
 const main = document.getElementById('main')
+
 const loadingGif = document.getElementById('loading')
+
 function mainPage(){
-    videoPageDiv.innerHTML = ''
-    main.innerHTML = ''
-    let innerString
-    for(let x=videosTableLength-1;x>videosTableLength-7;x--){
-        innerString = "<div><div class='video-thumbnail-wrapper' onclick='videoPage(" + x + ")'>"
-        innerString += "<div class='video-thumbnail__video-wrapper'><img id='test' src='video/" + x + ".mp4#t=2' class='video-thumbnail__video'><div class='shadow'></div></div>"
-        innerString += "<p class='video-thumbnail__title'>" + videosTable[x][0] + "</p>" 
-        innerString += "<p class='video-thumbnail__desc'>" + videosTable[x][2] + "</p>" 
-        innerString += "</div></div>" 
-        main.innerHTML += innerString
-    }
-    main.innerHTML += "<p class='loadmore' onclick='loadMore()'>Wczytaj więcej</p>"
-    vidToImg()
-    muteVideos()
+
+  const videopage = document.getElementById("video-player-container")
+  videopage.remove()
+  
+  const main = document.createElement("div")
+  main.classList.add("main")
+  main.setAttribute("id", "main")
+
+  const loadmore = document.createElement("p")
+  loadmore.classList.add("loadmore")
+  const titleText = document.createTextNode("Wczytaj więcej")
+  loadmore.appendChild(titleText)
+  loadmore.setAttribute("onclick", "loadMore()")
+  main.appendChild(loadmore)
+
+  document.body.appendChild(main)
+
+  for(let x=videosTableLength-1;x>videosTableLength-7;x--){
+    main.appendChild(videoThumbnail(x))
+  }
+  vidToImg()
 }
+
 let videosAmount = 6
 function loadMore(){
     videosAmount+=6
-    main.style.display = 'none'
-    loadingGif.style.display = 'block'
+    const main = document.getElementById("main")
     for(let x=videosTableLength-videosAmount+5;x>videosTableLength-videosAmount-1;x--){
-        innerString = "<div><div class='video-thumbnail-wrapper' onclick='videoPage(" + x + ")'>"
-        innerString += "<div class='video-thumbnail__video-wrapper'><img muted='true' src='video/" + x + ".mp4#t=2' class='video-thumbnail__video'><div class='shadow'></div></div>"
-        innerString += "<p class='video-thumbnail__title'>" + videosTable[x][0] + "</p>" 
-        innerString += "<p class='video-thumbnail__desc'>" + videosTable[x][2] + "</p>" 
-        innerString += "</div></div>" 
-        main.innerHTML += innerString
+      main.appendChild(videoThumbnail(x))
     }
-    setTimeout(function() {
-        main.style.display = 'grid'
-        loadingGif.style.display = 'none'
-    }, 2000)
     vidToImg()
-    muteVideos()
 }
+
 function vidToImg(){
   Array.prototype.map.call(
     document.querySelectorAll('.video-thumbnail__video'),
@@ -71,37 +109,56 @@ function vidToImg(){
       img.src = src;
     });
   }
-function muteVideos(){    
-  let videoList = document.getElementsByClassName('video-thumbnail__video')
-  len = videoList.length
-  for(let x=0;x<len;x++){
-    videoList[x].muted = true
-  }
-}
 
-const videoPageDiv = document.getElementById('video-player-container')
 function videoPage(videoId) {
-  main.innerHTML = ''
-  videoPageDiv.innerHTML = ''
-  innerString = "<div class='video-player-wrapper' id='video-player-wrapper'>"
-  innerString += "<video class='video-player__video' src='video/" + videoId + ".mp4' controls playsinline></video>"
-  innerString += "<p class='video-player__title'>" + videosTable[videoId][0] + "</p>" 
-  innerString += "<p class='video-player__desc'>" + videosTable[videoId][2] + "</p>" 
-  innerString += "</div>"
-  var arr = [];
+
+  const main = document.getElementById("main")
+  main.remove()
+
+  const container = document.createElement("div")
+  container.classList.add("video-player-container")
+  container.setAttribute("id", "video-player-container")
+  
+  const wrapper = document.createElement("div")
+  wrapper.classList.add("video-player-wrapper")
+  
+  const video = document.createElement("video")
+  video.classList.add("video-player__video")
+  const path = "video/" + videoId + ".mp4"
+  video.setAttribute("src", path)
+  video.setAttribute("controls", true)
+  video.setAttribute("playsinline", true)
+
+  const title = document.createElement("p")
+  title.classList.add("video-player__title")
+  const titleText = document.createTextNode(videosTable[videoId][0])
+  title.appendChild(titleText)
+
+  const desc = document.createElement("p")
+  desc.classList.add("video-player__desc")
+  const descText = document.createTextNode(videosTable[videoId][2])
+  desc.appendChild(descText)
+
+  wrapper.appendChild(video)
+  wrapper.appendChild(title)
+  wrapper.appendChild(desc)
+
+  const recommendations = document.createElement("div")
+  recommendations.classList.add("recommendations")
+
+  let arr = [];
   while(arr.length < 8){
-    var r = Math.floor(Math.random() * videosTable.length);
+    let r = Math.floor(Math.random() * videosTable.length);
     if(arr.indexOf(r) === -1) arr.push(r);
   }
-  innerString += "<div class='recommendations'>"
+
   for(let x=0;x<8;x++){
-    innerString += "<div><div class='video-thumbnail-wrapper' onclick='videoPage(" + arr[x] + ")'>"
-    innerString += "<div class='video-thumbnail__video-wrapper'><img muted='true' src='video/" + arr[x] + ".mp4#t=2' class='video-thumbnail__video'><div class='shadow'></div></div>"
-    innerString += "<p class='video-thumbnail__title'>" + videosTable[arr[x]][0] + "</p>" 
-    innerString += "</div></div>" 
+    recommendations.appendChild(videoThumbnail(arr[x]))
   }
-  innerString += "</div>"
-  videoPageDiv.innerHTML += innerString
+
+  container.appendChild(wrapper)
+  container.appendChild(recommendations)
+  document.body.appendChild(container)
+
   vidToImg()
-  muteVideos()
 }
