@@ -35,5 +35,5 @@ const videosTable=[
     ['Kurwa, zobacz jak to idzie','angry offend','Kurwa, zobacz jak to idzie, jebany cieć w dupę pierdolony. Rusz dupę kurwa! Rusz kurwa dupę pedale kurwo jebana! Przeklinałem? Nie. To dobrze. Idzie kurwa i to nie wiadomo czy to facet czy to baba. Ale jeszcze zwolnił bo to było widać. Zwolnił wiesz dlaczego? Bo zobaczył dwóch facetów i chciał pokazać jaką ma piękną dupę. Zaczął nią kurwa kręcić jak to pederasta'],
     ['Ruszcie swoje tłuste dupska','angry offend','Ruszcie swoje tłuste dupska i łyse pały i maszerować, maszerować, maszerować, aż się rozwali ten układ na strzępy, na kawałki, maszerować!'],
     ['Biurokracja','angry','W pierdolonym dokumencie z pierdolonym nagłówkiem z pierdoloną kursywą z pierdoloną pieczątką z pierodlonym podpisem'],
-    ['Dlaczego ty na mnie mówisz że jestem żydem','sad',''],
+    ['Dlaczego ty na mnie mówisz że jestem żydem','sad','Dlaczego ty nam nie mówisz, że ja jestem Żyd? Bo ty jesteś jak Żyd. Marcin... I ty, Brutusia? A ktoś musi być przeciwko tobie.'],
 ]
