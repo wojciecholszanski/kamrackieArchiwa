@@ -36,4 +36,13 @@ const videosTable=[
     ['Ruszcie swoje tłuste dupska','angry offend','Ruszcie swoje tłuste dupska i łyse pały i maszerować, maszerować, maszerować, aż się rozwali ten układ na strzępy, na kawałki, maszerować!'],
     ['Biurokracja','angry','W pierdolonym dokumencie z pierdolonym nagłówkiem z pierdoloną kursywą z pierdoloną pieczątką z pierodlonym podpisem'],
     ['Dlaczego ty na mnie mówisz że jestem żydem','sad','Dlaczego ty nam nie mówisz, że ja jestem Żyd? Bo ty jesteś jak Żyd. Marcin... I ty, Brutusia? A ktoś musi być przeciwko tobie.'],
+    ['Kawiarniane skurwysyny','angry offend',' Jak ja kurwa nienawidzę tych kawiarnianych skurwysynów, pierdalonych mądrali, jebanych intelektualistów. Ja bym wam kurwa mózgi rozmazywał na ścianie wy, kurwy wy inteligenckie jebane. Ile kurwa jeszcze czasu ma to trwać? Ja wam kurwa nie odpuszczę wy gnoje zasyfione. Wypierdalać kurwa z Polski jak najdalej do tej jebanej zgniłej Europy. Tam kurwa jak w sraczu jest wasze miejsce owsiki.'],
+    ['Dlaczego ty siedzisz przed komputerem','angry offend',' Dlaczego ty kurwo siedzisz przed komputerem? Idź spać! Idź spać kurwo!'],
+    ['Twarde erekcje','happy','Niekończące się twarde erekcje od zaraz. Niekończące się twarde erekcje od zaraz Takich chujiii'],
+    ['Kim jest Johny Daniels','angry','Kim jest Johnny Daniels? Pytam się was rodacy! Kim jest Johnny Daniels?'],
+    ['Nigdy z Żydami','happy','Nigdy z Żydami nie będziemy w aliansach, przed ich podłością karku nie skłonimy, bo my, Słowianie, u Boga w ordynansach prawdy bronimy. Bo my, Słowianie, u Boga w ordynansach zrodzy Maryi.'],
+    ['Daj jakąś interludę','angry','Daj kurwa jakąś interlude, bo kurwa nie mam... Daj kurwa jakiegoś marsza hitlerowskiego!'],
+    ['Joker','happy',''],
+    ['Foka','happy',''],
+    ['Lewackie koietony','angry','Te Lewackie kobietony, te niejendojebane, brzydkie... W duszy brzydkie istoty... Chcą się pierdolić i skrobać, pierdolić i skrobać... To niech się kurwa skrobią! Koparką niech się skrobią kurwa! Tylko budki trzeba postawić. Budki Skrobankowe... Wziąć dupę Lempart jako wymiar główny... Przychodzi baba... Fik! Dupę wsadza w dziurę... A tam wrzuć monetę albo kartą płatniczą albo blikiem... Blub, blub, blub... I tam... Blub, blub, blub... I tam wiertarka... A potem już po wszystkim taki kop w dupę... Blub! I następna...'],
 ]

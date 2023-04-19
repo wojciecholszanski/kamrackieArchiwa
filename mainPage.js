@@ -140,7 +140,14 @@ function vidToImg(){
 function videoPage(videoId) {
 
   const main = document.getElementById("main")
-  main.remove()
+  if(main){
+    main.remove()
+  }
+
+  const videoContainer = document.getElementById("video-player-container")
+  if(videoContainer){
+    videoContainer.remove()
+  }
 
   const container = document.createElement("div")
   container.classList.add("video-player-container")
