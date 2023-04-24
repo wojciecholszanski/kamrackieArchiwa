@@ -44,5 +44,5 @@ const videosTable=[
     ['Daj jakąś interludę','angry','Daj kurwa jakąś interlude, bo kurwa nie mam... Daj kurwa jakiegoś marsza hitlerowskiego!'],
     ['Joker','happy',''],
     ['Foka','happy',''],
-    ['Lewackie koietony','angry','Te Lewackie kobietony, te niejendojebane, brzydkie... W duszy brzydkie istoty... Chcą się pierdolić i skrobać, pierdolić i skrobać... To niech się kurwa skrobią! Koparką niech się skrobią kurwa! Tylko budki trzeba postawić. Budki Skrobankowe... Wziąć dupę Lempart jako wymiar główny... Przychodzi baba... Fik! Dupę wsadza w dziurę... A tam wrzuć monetę albo kartą płatniczą albo blikiem... Blub, blub, blub... I tam... Blub, blub, blub... I tam wiertarka... A potem już po wszystkim taki kop w dupę... Blub! I następna...'],
+    ['Lewackie kobietony','angry','Te Lewackie kobietony, te niejendojebane, brzydkie... W duszy brzydkie istoty... Chcą się pierdolić i skrobać, pierdolić i skrobać... To niech się kurwa skrobią! Koparką niech się skrobią kurwa! Tylko budki trzeba postawić. Budki Skrobankowe... Wziąć dupę Lempart jako wymiar główny... Przychodzi baba... Fik! Dupę wsadza w dziurę... A tam wrzuć monetę albo kartą płatniczą albo blikiem... Blub, blub, blub... I tam... Blub, blub, blub... I tam wiertarka... A potem już po wszystkim taki kop w dupę... Blub! I następna...'],
 ]
