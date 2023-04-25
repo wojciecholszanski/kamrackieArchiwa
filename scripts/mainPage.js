@@ -14,7 +14,7 @@ function videoThumbnail(videoData) {
   
   const video = document.createElement("img")
   video.classList.add("video-thumbnail__video")
-  const path = "../assets/videos/" + videoData.id + ".mp4"
+  const path = "./assets/videos/" + videoData.id + ".mp4"
   video.setAttribute("src", path)
   video.setAttribute("id", videoData.id)
   
@@ -65,7 +65,7 @@ else{
 }
 
 async function data(start,end){
-  const response = await fetch('../assets/data/videos.json')
+  const response = await fetch('./assets/data/videos.json')
   let videoData = await response.json()
   videoData = await videoData.sort((a, b) => {return b.id - a.id});
   videoData = videoData.slice(start,end)
@@ -145,7 +145,7 @@ async function searchPage(){
 
   const value = document.getElementById("search-input").value.toLowerCase()
 
-  const response = await fetch('../assets/data/videos.json')
+  const response = await fetch('./assets/data/videos.json')
   let videoData = await response.json()
   videoData = await videoData.sort((a, b) => {return b.id - a.id});
   videoData = await videoData.filter(el => el.name.includes(value) || el.text.includes(value))

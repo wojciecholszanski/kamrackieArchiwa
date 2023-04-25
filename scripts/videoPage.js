@@ -1,7 +1,7 @@
 
 async function videoPage(videoId) {
 
-    const response = await fetch('../assets/data/videos.json')
+    const response = await fetch('./assets/data/videos.json')
     const res = await response.json()
     videosTableLength = res.length
     videoData = await res.filter(el => el.id == videoId)[0]
@@ -27,12 +27,12 @@ async function videoPage(videoId) {
     video.setAttribute("playsinline", true)
     
     const source = document.createElement("source")
-    const path = "../assets/videos/" + videoData.id + ".mp4"
+    const path = "./assets/videos/" + videoData.id + ".mp4"
     source.setAttribute("src", path)
     source.setAttribute("type", "video/mp4")
   
     const track = document.createElement("track")
-    const trackPath = "../assets/subtitles/" + videoData.id + ".vtt"
+    const trackPath = "./assets/subtitles/" + videoData.id + ".vtt"
     track.setAttribute("src", trackPath)
     track.setAttribute("default", true)
   
