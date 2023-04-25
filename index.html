@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamrackie Archiwa</title>
     <link rel="shortcut icon" href="logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="nav.css">
-    <link rel="stylesheet" href="videoPlayer.css">
+    <link rel="stylesheet" href="assets/style/main.css">
+    <link rel="stylesheet" href="assets/style/nav.css">
+    <link rel="stylesheet" href="assets/style/videoPlayer.css">
 </head>
-<body onload="mainPage()">
+<body>
     <nav class="nav">
-        <div class="nav__logo" onclick="mainPage()">
-            <img src="logo.png" class="nav__logo-img" alt="Logo Rodacy Kamraci">
+        <div class="nav__logo" onclick="document.location.href = '/'">
+            <img src="../assets/img/logo.png" class="nav__logo-img" alt="Logo Rodacy Kamraci">
             <p class="nav__logo-title">Kamrackie Archiwa</p>
         </div>
         <div class="nav__search-bar-wrapper">
@@ -22,8 +22,8 @@
         </div>
     </nav>
     </video>
-    <script src="videosTable.js"></script>
-    <script src="mainPage.js"></script>
+    <script src="scripts/videoPage.js"></script>
+    <script src="scripts/mainPage.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
