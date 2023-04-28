@@ -5,16 +5,9 @@ Strona poświęcona archiwizacji materiałów związanych z Wojciechem Olszańsk
 
 Contributions are always welcome!
 
-Dodaj nowy element w tabeli `videosTable` w pliku `videosTable.js`
+Dodaj nowy obiekt w tabeli w pliku `videos.json`
 
-```js
-const videoTable=[
-    ...,
-    [tytuł_filmu, kategorie, transkrypcja]
-]
-```
-
-Dodaj plik wideo do folderu `/videos` i nazwij go następną liczbą `*.mp4`
+Dodaj nagranie do folderu `assets/videos` i nazwij go następną liczbą `*.mp4`
 
 Do tworzenia napisów wykorzystaj https://replicate.com/openai/whisper. Zapisz plik z rozszerzeniem `.vtt` i umieść w folderze `/subtitles` z nazwą o takim samym numerze jak plik mp4.
 ## Authors
