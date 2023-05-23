@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamrackie Archiwa</title>
-    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/style/main.css">
     <link rel="stylesheet" href="assets/style/nav.css">
     <link rel="stylesheet" href="assets/style/videoPlayer.css">
@@ -16,9 +16,11 @@
             <img src="./assets/img/logo.png" class="nav__logo-img" alt="Logo Rodacy Kamraci">
             <p class="nav__logo-title">Kamrackie Archiwa</p>
         </div>
-        <div class="nav__search-bar-wrapper">
-            <input type="text" class="nav__search-bar" id="search-input" placeholder="Szukaj">
-            <button class="nav__search-button" onclick="searchPage()"><ion-icon name="search-outline"></ion-icon></button>
+        <div>
+            <div class="nav__search-bar-wrapper" id="nav__search-bar-wrapper">
+                <input type="text" class="nav__search-bar" id="search-input" placeholder="Szukaj" onkeydown = "if (event.keyCode == 13){searchPage()}"  >
+                <button class="nav__search-button" onclick="searchPage()"><ion-icon name="search-outline"></ion-icon></button>
+            </div>
         </div>
     </nav>
     </video>
